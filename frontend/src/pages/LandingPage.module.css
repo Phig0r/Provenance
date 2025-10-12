@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap');
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  color: #292D2A;
+  margin: 0;
+}
+
+.pageContainer {
+  width: 100%;
+  max-width: max-content;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* --- Header --- */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 6px 6px 6px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #292D2A;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.logoTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+  color: #292D2A; 
+}
+
+.headerTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #292D2A;
+  margin: 0;
+}
+
+.connectWalletBtn {
+  background-color: #F8F5F2;
+  color: #292D2A;
+  border: 1px solid #292D2A;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.connectWalletBtn:hover {
+  background-color: #E2E8F0;
+  border-color: #A0AEC0;
+}
+
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+
+
+.topRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+}
+
+.bottomRow{
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.bigTitle {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #292D2A;
+  padding: 30px;
+  width: fit-content;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+
+.featureCardContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.featureTitle {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+
+
+
+.pillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.featurePill {
+  background-color: #F8F5F2;
+  border: 1px solid #292D2A;
+  color: #292D2A;
+  padding: 12px 20px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 900px) {
+  .mainLayout {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .bigTitle {
+    font-size: 3rem;
+  }
+  .featureCardContent,
+  .featureCardContent.reversed {
+    flex-direction: column-reverse;
+  }
+  .featureTitle,
+  .featureCardContent.reversed .featureTitle {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}

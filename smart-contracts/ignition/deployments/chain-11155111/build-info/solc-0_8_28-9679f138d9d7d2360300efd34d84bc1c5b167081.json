@@ -1,0 +1,42 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-9679f138d9d7d2360300efd34d84bc1c5b167081",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/utils/DemoRoleFaucet.sol": "project/contracts/utils/DemoRoleFaucet.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/libraries/Constants.sol": {
+        "content": "// contracts/libraries/Constants.sol\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.28;\r\n\r\nlibrary Constants {\r\n   bytes32 constant ADMIN_ROLE = keccak256(\"ADMIN_ROLE\");\r\n   bytes32 constant BRAND_ROLE = keccak256(\"BRAND_ROLE\");\r\n   bytes32 constant RETAILER_ROLE = keccak256(\"RETAILER_ROLE\");\r\n   \r\n   //Access Control\r\n   bytes32 constant DEFAULT_ADMIN_ROLE = 0x00;\r\n}"
+      },
+      "project/contracts/utils/DemoRoleFaucet.sol": {
+        "content": "// contracts/utils/DemoRoleFaucet.sol\r\n\r\n// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.28;\r\n\r\nimport \"../libraries/Constants.sol\";\r\n\r\ninterface IAccessControl {\r\n   function grantRole(bytes32 role, address account) external;\r\n   function revokeRole(bytes32 role, address account) external;\r\n   function hasRole(bytes32 role, address account) external view returns (bool);\r\n}\r\n\r\n/**\r\n * @title DemoRoleFaucet\r\n * @dev This is a helper contract for demonstration purposes ONLY.\r\n * It allows any user to grant themselves roles on the main Provenance contract.\r\n * For this to work, this Faucet's address must be granted the DEFAULT_ADMIN_ROLE\r\n * on the main Provenance contract.\r\n*/\r\ncontract DemoRoleFaucet {\r\n\r\n   IAccessControl public provenanceDiamond;\r\n\r\n   /**\r\n    * @dev Sets the address of the main Provenance Diamond contract.\r\n    * @param _diamondAddress The deployed address of your main Provenance proxy.\r\n    */\r\n   constructor(address _diamondAddress) {\r\n      provenanceDiamond = IAccessControl(_diamondAddress);\r\n   }\r\n\r\n   /**\r\n     * @notice Allows any user to request the ADMIN_ROLE for themselves.\r\n     * @dev Also revokes any other roles the user might have for a clean demo state.\r\n     */\r\n   function requestAdminRoleRole() external {\r\n      _revokeAllRoles(msg.sender);\r\n      provenanceDiamond.grantRole(Constants.ADMIN_ROLE, msg.sender);\r\n   }\r\n\r\n   /**\r\n     * @notice Allows any user to request the BRAND_ROLE for themselves.\r\n     * @dev Also revokes any other roles the user might have for a clean demo state.\r\n     */\r\n   function requestBrandRole() external {\r\n      _revokeAllRoles(msg.sender);\r\n      provenanceDiamond.grantRole(Constants.BRAND_ROLE, msg.sender);\r\n   }\r\n\r\n   /**\r\n     * @notice Allows any user to request the RETAILER_ROLE for themselves.\r\n     * @dev Also grants BRAND_ROLE, as retailers are managed by brands.\r\n     */\r\n   function requestRetailerRole() external {\r\n      _revokeAllRoles(msg.sender);\r\n      provenanceDiamond.grantRole(Constants.RETAILER_ROLE, msg.sender);\r\n   }\r\n\r\n   /**\r\n     * @notice Allows a user to revoke any special roles to become a default user.\r\n     */\r\n   function revokeAllMyRoles() external {\r\n      _revokeAllRoles(msg.sender);\r\n   }\r\n\r\n   /**\r\n     * @dev Internal helper to remove all roles from a user.\r\n     */\r\n   function _revokeAllRoles(address _user) internal {\r\n      if (provenanceDiamond.hasRole(Constants.ADMIN_ROLE, _user)) {\r\n         provenanceDiamond.revokeRole(Constants.ADMIN_ROLE, _user);\r\n      }\r\n      if (provenanceDiamond.hasRole(Constants.BRAND_ROLE, _user)) {\r\n         provenanceDiamond.revokeRole(Constants.BRAND_ROLE, _user);\r\n      }\r\n      if (provenanceDiamond.hasRole(Constants.RETAILER_ROLE, _user)) {\r\n         provenanceDiamond.revokeRole(Constants.RETAILER_ROLE, _user);\r\n      }\r\n   }\r\n}\r\n"
+      }
+    }
+  }
+}

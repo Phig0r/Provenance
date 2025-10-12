@@ -1,0 +1,147 @@
+/* Using Manrope font to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.pageContainer {
+  background-color: #FBFBFA;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 3.5fr 1fr; 
+  gap: 24px;
+  padding: 24px;
+  align-items: stretch;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rightColumn {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   border: 1px solid #292D2A;
+   border-bottom-right-radius: 12px ;
+   border-top-right-radius: 12px ;
+   padding: 20px;
+   height: auto;
+}
+
+.cardTop {
+   background-color: #FFFFFF;
+   border: 1px solid #292D2A;
+   border-top-left-radius: 12px ;
+   padding: 24px;
+   min-height: 420px;
+   display: flex;
+   flex-direction: column;
+}
+
+.cardBottom {
+   background-color: #FFFFFF;
+   border: 1px solid #292D2A;
+   border-bottom-left-radius: 12px ;
+   padding: 24px;
+   min-height: 420px;
+   display: flex;
+   flex-direction: column;
+}
+
+.emptyPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B706B;
+  background: #F8F5F2;
+  border: 1px dashed #EAE6E2;
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 300px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #292D2A;
+  margin: 0 0 16px 0;
+}
+
+/* --- Styles for the integrated StatCard --- */
+.statCard {
+   background-color: #F8F5F2;
+   border: 1px solid #EAE6E2;
+   border-radius: 16px;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 180px;
+}
+
+.statContent {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+}
+
+.statTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #292D2A;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.statValue {
+  font-size: 36px;
+  font-weight: 800;
+  color: #292D2A;
+  margin: 0;
+}
+
+.statIconWrapper {
+  color: #292D2A;
+}
+
+.statIconWrapper svg {
+  width: 42px;
+  height: 42px;
+}
+
+/* Alert Styles */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 10px 24px 24px 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.alert.demo {
+  background-color: #F3F0FF;
+  color: #7C3AED;
+  border-color: #7C3AED;
+}
+
+.alert.suspended {
+  background-color: #FEF2F2;
+  color: #B91C1C;
+  border-color: #B91C1C;
+}
+
+.alert.terminated {
+  background-color: #FEF2F2;
+  color: #B91C1C;
+  border-color: #B91C1C;
+}

@@ -1,0 +1,96 @@
+.toastContainer {
+  position: fixed;
+  top: -80px; /* hidden above the viewport */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 320px;
+  max-width: 640px;
+  padding: 10px 14px;
+  border: 1px solid #292D2A;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: #292D2A;
+  z-index: 9999;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  transition: top 180ms ease-in-out, opacity 180ms ease-in-out;
+  opacity: 0.98;
+}
+
+.show {
+  top: 18px; /* slide-in position */
+}
+
+.iconContainer {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toastMessage {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.toastDetail {
+  margin: 0;
+  font-size: 12px;
+  color: #6B706B;
+}
+
+.closeButton {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Types */
+.success {
+  border-color: #065F46;
+  color: #065F46;
+  background-color: #ECFDF5;
+}
+
+.error {
+  border-color: #B91C1C;
+  color: #B91C1C;
+  background-color: #FEF2F2;
+}
+
+.info {
+  border-color: #2563EB;
+  color: #1F2937;
+  background-color: #EFF6FF;
+}
+
+/* Spinner for info */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #bfdbfe; /* light blue */
+  border-top-color: #2563EB; /* primary blue */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+

@@ -1,0 +1,121 @@
+/* Using Manrope font to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --card-bg-dark: #292D2A;
+  --text-primary: #292D2A;
+  --text-placeholder: #A0AEC0;
+  --button-primary-text: #FFFFFF;
+  --input-bg-dark: #1A202C;
+  --input-border-dark: #4A5568;
+  --log-bg: #1A202C;
+  --log-border: #4A5568;
+  --log-text: #A0AEC0;
+}
+
+/* Base card layout for perfect symmetry with the DeviceInterface card */
+.card {
+  width: 520px;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Manrope', sans-serif;
+  min-height: 500px; /* Ensure a consistent height */
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+/* Dark theme overrides */
+.darkCard {
+  background-color: var(--card-bg-dark);
+  color: var(--log-text);
+  border: none; 
+}
+
+.darkCard .cardTitle {
+  color: var(--button-primary-text);
+}
+
+.darkCard .formGroup label {
+  color: var(--text-placeholder);
+}
+
+.darkCard .formGroup input {
+  background-color: var(--input-bg-dark);
+  border-color: var(--input-border-dark);
+  color: var(--button-primary-text);
+}
+
+.formGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid; /* Border color is set by darkCard overrides */
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.placeholderInput {
+  color: #6B706B !important;
+  font-style: italic;
+}
+
+.demoText {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-placeholder);
+}
+
+.logContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows the log to fill remaining vertical space */
+}
+
+.logContainer label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-placeholder);
+  margin-bottom: 6px;
+}
+
+.logContent {
+  flex-grow: 1;
+  background-color: var(--log-bg);
+  border: 1px solid var(--log-border);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  color: var(--log-text);
+  
+  /* Custom scrollbar for Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-placeholder) var(--log-bg);
+}
+
+/* Custom scrollbar for WebKit browsers */
+.logContent::-webkit-scrollbar { width: 8px; }
+.logContent::-webkit-scrollbar-track { background: var(--log-bg); }
+.logContent::-webkit-scrollbar-thumb {
+  background-color: var(--text-placeholder);
+  border-radius: 4px;
+  border: 2px solid var(--log-bg);
+}

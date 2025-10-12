@@ -1,0 +1,11 @@
+{
+  "ProvenanceModule#AdminFacet": "0xEab7bD1CB91DEB3ae9ae24055c8491BD44ca49e8",
+  "ProvenanceModule#BrandFacet": "0xeceCC6A0E111c259A956Ed5ADD79a85b7F5052d8",
+  "ProvenanceModule#RetailerFacet": "0xfA749B3e946a03288a389AEDe1d5B4d0c1c02535",
+  "ProvenanceModule#ConsumerFacet": "0x8BBCcE1a4bC66031B3a2204b381b2E17aF7A4cAB",
+  "ProvenanceModule#ERC721Facet": "0x28E56E64f3841AD06875AEF4CBa6D78Bc2ea7f76",
+  "ProvenanceModule#AccessControlFacet": "0x4162174a021DAFcf7C3C8b85817C057237FDfF5b",
+  "ProvenanceModule#Provenance": "0x81eEB7A87E91f490FbcbFfCbd70793886aE83a59",
+  "ProvenanceModule#AccessControlPointer": "0x81eEB7A87E91f490FbcbFfCbd70793886aE83a59",
+  "ProvenanceModule#DemoRoleFaucet": "0x0442a21D30346d753664F5CB2fDee23C8D9689B5"
+}

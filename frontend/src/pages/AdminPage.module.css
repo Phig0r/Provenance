@@ -1,0 +1,311 @@
+/* Using Manrope font to match the Figma design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.mainContent {
+  background-color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  /* position:fixed; */
+
+}
+
+.leftColumn {
+  flex: 1;
+  max-width: 400px;
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+.leftCard {
+   border: 1px solid #292D2A; 
+   border-top-left-radius: 12px;
+   border-bottom-left-radius: 12px;
+   padding: 24px;
+   height: 90%;
+   display: flex;
+   flex-direction: column;
+}
+
+.rightCard {
+   border: 1px solid #292D2A; 
+   border-top-right-radius: 12px;
+   border-bottom-right-radius: 12px;
+   padding: 24px;
+   height: 90%;
+
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 800; 
+  color: #292D2A;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B706B; 
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.formGroup ::placeholder{
+   color: #ADB5BD;
+   font-size: 14px;
+}
+.formGroup input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #EAE6E2;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #F8F5F2;
+  box-sizing: border-box;
+  color: #292D2A;
+}
+
+.reviewDetails {
+  border: 1px solid #EAE6E2;
+  background-color: #F8F5F2;
+  padding: 16px;
+  margin: 16px 0 24px 0;
+  border-radius: 12px;
+}
+
+.reviewTitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #292D2A;
+}
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.reviewItem {
+  font-size: 14px;
+  color: #6B706B;
+}
+
+.reviewItem > div { 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reviewValue {
+  font-weight: 600;
+  color: #292D2A;
+  font-size: 12px;
+  margin-top: 4px;
+  padding-left: 24px;
+}
+
+/* New utility classes to keep layout stable for long content */
+.fixedText {
+  display: inline-block;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fitText {
+  font-size: clamp(10px, 1.2vw, 12px);
+}
+
+.reviewValue .statusPill {
+  transform: scale(0.75); 
+  transform-origin: left; 
+}
+
+.reviewItem svg {
+  width: 16px;
+  height: 16px;
+  color: #6B706B;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #FFF6DF;
+  color: #C79A2D;
+  font-size: 14px;
+  /* UPDATED: Reduced top margin to bring it closer to the bottom */
+  margin-top: 16px;
+}
+
+.alert svg {
+  width: 20px;
+  height: 20px;
+}
+
+.registerButton {
+   text-align: center;
+   letter-spacing: 2px;
+   padding: 12px;
+   font-size: 14px;
+   font-weight: 700;
+   color: #292D2A;
+   background-color: #F8F5F2;
+   border: 1px solid #292D2A;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: background-color 0.2s;
+   margin-top: auto; 
+   align-self: center; 
+   width: 50%; 
+}
+
+.registerButton:hover {
+  background-color: #e2e8f0;
+  border-color: #a0aec0;
+}
+
+/* --- Right Column Styles --- */
+.manageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.searchBar {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #6B706B;
+}
+
+.searchBar input {
+  padding: 12px 14px 12px 40px;
+  border: 1px solid #EAE6E2;
+  border-radius: 30px;
+  font-size: 14px;
+  min-width: 280px;
+  background-color: #F8F5F2;
+}
+
+.brandsTable {
+   width: 100%;
+   border-spacing: 0;
+   font-size: 14px;
+   border-top-left-radius: 16px;
+   border-top-right-radius: 16px;
+   overflow: hidden;
+   border-top: 1px solid #EAE6DB;
+   border-right: 1px solid #EAE6DB;
+   border-left: 1px solid #EAE6DB;
+
+}
+
+.brandsTable td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #EAE6DB;
+}
+
+
+
+.brandsTable th {
+  padding: 14px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6B706B;
+  text-transform: uppercase;
+  background-color: #F8F5F2;
+
+  border-bottom: 1px solid #EAE6E2;
+}
+
+.headerIcon {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.brandsTable td a {
+  color: #D97706; 
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.updateButton {
+   padding: 6px 12px;
+   font-size: 12px;
+   font-weight: 600;
+   color: #292D2A;
+   background-color: #FFFFFF;
+   border: 1px solid #292D2A;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: background-color 0.2s;
+}
+
+.updateButton:hover {
+   background-color: #e2e8f0;
+   border-color: #a0aec0;
+}
+
+.updateButton:disabled {
+  background-color: #F3F4F6;
+  color: #9CA3AF;
+  border-color: #E5E7EB;
+  cursor: not-allowed;
+}
+
+/* --- Status Pill Styles --- */
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusPill.active { background-color: #ECFDF5; color: #065F46; border: 1px solid #065F46; }
+.statusPill.active .statusDot { background-color: #065F46; }
+
+.statusPill.suspended { background-color: #FFFBEB; color: #B45309; border: 1px solid #B45309;}
+.statusPill.suspended .statusDot { background-color: #B45309; }
+
+.statusPill.revoked { background-color: #FEF2F2; color: #B91C1C; border: 1px solid #B91C1C; }
+.statusPill.revoked .statusDot { background-color: #B91C1C; }
+
+.statusPill.pending { background-color: #F3F4F6; color: #4B5563; border: 1px solid #4B5563;}
+.statusPill.pending .statusDot { background-color: #4B5563; }

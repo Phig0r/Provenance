@@ -1,0 +1,169 @@
+/* Using Manrope font to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 10px;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+.tableSection {
+  width: 100%;
+}
+
+.actionSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.actionCard {
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Form Styles --- */
+.formGroup {
+  width: 100%;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #292D2A;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #EAE6E2;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #F8F5F2;
+  box-sizing: border-box;
+}
+
+/* This enables the horizontal scrolling */
+.selectedProductsList {
+  height: 40px;
+  background-color: #F8F5F2;
+  border: 1px solid #EAE6E2;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  
+}
+
+.selectedProductsList::-webkit-scrollbar {
+  height: 4px; 
+}
+.selectedProductsList::-webkit-scrollbar-button {
+  display: none; 
+}
+
+.selectedProductsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.selectedProductsList::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.selectedProductsList:hover::-webkit-scrollbar-thumb {
+  background-color: #6B706B; 
+}
+
+.productTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: #e5e7eb;
+  border: 2px solid #5e6774;
+  border-radius: 18px; 
+  padding: 4px 5px;
+  font-size: 14px;
+  font-weight: 600;
+  height: fit-content;
+  color: #5e6774;
+  white-space: nowrap; 
+}
+
+.productTag button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: auto; 
+}
+
+.productTag svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+  color: #5e6774;
+}
+
+.formGroup input:disabled {
+  background-color: #e5e7eb;
+  border-color: #6b706b;
+  color: #6b706b;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.disabledFormGroup label {
+  color: #292D2A ;
+}
+
+.actionButton {
+  text-align: center;
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #292D2A;
+  background-color: #FFFFFF;
+  border: 1px solid #292D2A;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: flex-end;
+  width: auto;
+}
+
+.actionButton.primary {
+  background-color: #292D2A;
+  color: #FFFFFF;
+}
+
+.actionButton:hover {
+  background-color: #e2e8f0;
+  border-color: #a0aec0;
+}
+
+.actionButton:disabled {
+  background-color: #F3F4F6;
+  color: #9CA3AF;
+  border-color: #E5E7EB;
+  cursor: not-allowed;
+}
+
+.actionButton:disabled:hover {
+  background-color: #F3F4F6;
+  border-color: #E5E7EB;
+}

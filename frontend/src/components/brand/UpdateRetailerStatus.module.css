@@ -1,0 +1,177 @@
+/* Using Manrope font to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(107, 112, 107, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Manrope', sans-serif;
+}
+
+.modalContent {
+  background-color: #eae6db;
+  border: 3px solid #21252b;
+  border-radius: 16px;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 450px; /* Slightly wider for the new layout */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #292D2A;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #292D2A;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #6B706B;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.subtitle strong {
+  color: #292D2A;
+  font-weight: 700;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: flex-end; /* Aligns button with bottom option */
+  gap: 24px;
+}
+
+.statusList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1; /* Takes up available space */
+}
+
+.radioContainer {
+  position: relative;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  border: 1px solid currentColor;
+}
+
+.customRadio {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.customRadio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  transition: all 0.2s ease-in-out;
+}
+
+/* --- Checked State --- */
+.radioInput:checked ~ .customRadio::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radioLabel:has(.radioInput:checked) {
+  box-shadow: 0 0 0 1.5px currentColor;
+}
+
+/* --- Color Theming for each status --- */
+.active { color: #065F46; }
+.radioLabel:has(.radioInput:checked).active { background-color: #ECFDF5; }
+.radioLabel:has(.radioInput:disabled).active { background-color: #e5e7eb; color: #4B5563; border: 1px solid currentColor }
+
+.suspended { color: #B45309; }
+.radioLabel:has(.radioInput:checked).suspended { background-color: #FFFBEB; }
+.radioLabel:has(.radioInput:disabled).suspended { background-color: #e5e7eb; color: #4B5563; border: 1px solid currentColor }
+
+.terminated { color: #B91C1C; }
+.radioLabel:has(.radioInput:checked).terminated { background-color: #FEF2F2; }
+.radioLabel:has(.radioInput:disabled).terminated { background-color: #e5e7eb; color: #4B5563; border: 1px solid currentColor }
+
+/* --- Disabled State --- */
+.radioInput:disabled + .radioLabel {
+  background-color: #e5e7eb;
+  border-color: #6b7280;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.currentTag {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B706B;
+}
+.radioInput:disabled + .radioLabel .currentTag {
+  color: #6b7280;
+}
+
+/* --- Confirm Button --- */
+.confirmButton {
+  padding: 14px 24px;
+  background-color: #292D2A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px; /* Pill shape */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.confirmButton:hover {
+  background-color: #4B5563;
+}

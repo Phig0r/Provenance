@@ -1,0 +1,132 @@
+/* Using Inter font as a professional default */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #292D2A; 
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: #2D3748;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Left Section: Logo */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1; 
+}
+
+.logoIcon {
+  width: 30px;
+  height: 30px;
+  color: #6B706B;
+}
+
+.logoText {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #6B706B;
+}
+
+/* Center Section: Title */
+.centerTitle {
+  flex: 1;
+  text-align: center;
+}
+
+.centerTitle h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #6B706B;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.statusDotIndicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.statusDotIndicator.active { background-color: #10B981; } /* green */
+.statusDotIndicator.pending { background-color: #F59E0B; } /* amber */
+.statusDotIndicator.suspended { background-color: #EF4444; } /* red */
+.statusDotIndicator.revoked { background-color: #7F1D1D; } /* dark red */
+.statusDotIndicator.terminated { background-color: #7F1D1D; }
+.statusDotIndicator.demo { background-color: #8B5CF6; } /* purple */
+
+/* Right Section: Wallet Info & Actions */
+.walletWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px; /* Reduced gap for better fit */
+  flex: 1;
+}
+
+.walletAddress {
+  text-align: right;
+}
+
+.walletAddress span {
+  font-size: 12px;
+  color: #718096;
+}
+
+.walletAddress p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2D3748;
+  margin: 2px 0 0 0;
+}
+
+/* NEW: Style for the Switch Role button */
+.switchRoleButton {
+  background-color: transparent;
+  color: #4B858E; /* Teal text color */
+  border: 1px solid #4B858E; /* Teal border */
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.switchRoleButton:hover {
+  background-color: #4B858E; /* Fill with teal on hover */
+  color: #FFFFFF; /* White text on hover */
+}
+
+.logoutButton {
+  background-color: #F8F5F2;
+  color: #292D2A;
+  border: 1px solid #292D2A;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.logoutButton:hover {
+  background-color: #E2E8F0;
+  border-color: #A0AEC0;
+}

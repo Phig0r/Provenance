@@ -1,0 +1,140 @@
+/* Using Manrope font to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-bg: #FFFFFF;
+  --card-border-light: #292D2A;
+  --stepper-active-color: #292D2A;
+  --stepper-inactive-color: #A0AEC0;
+  --stepper-circle-bg-inactive: #F8F5F2;
+  --stepper-circle-border-inactive: #EAE6E2;
+  --stepper-connector: #EAE6E2;
+  --animation-request-color: #2563EB;
+  --animation-response-color: #10B981;
+}
+
+.pageContainer {
+  background-color: var(--primary-bg);
+  height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: var(--text-primary);
+}
+
+.mainContent {
+  padding: 24px;
+  margin: 0 auto;
+}
+
+/* --- Stepper Styles --- */
+.stepperContainer {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   padding: 24px;
+   margin-bottom: 24px;
+   border: 1px solid var(--card-border-light); 
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   background-color: #FFFFFF; 
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--stepper-inactive-color);
+  transition: color 0.3s ease;
+}
+.step.active {
+  color: var(--stepper-active-color);
+  font-weight: 600;
+}
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--stepper-circle-border-inactive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background-color: var(--stepper-circle-bg-inactive);
+  transition: all 0.3s ease;
+}
+.step.active .stepCircle {
+  border-color: var(--stepper-active-color);
+  background-color: var(--stepper-active-color);
+  color: #FFFFFF;
+}
+.stepLabel {
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+.stepConnector {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--stepper-connector);
+  margin: 0 16px;
+  transform: translateY(17px);
+}
+
+/* --- Main Layout --- */
+.verificationContainer {
+  border: 1px solid var(--card-border-light);
+  padding: 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.interfaceGrid {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* --- Animation Styles --- */
+.animationOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.comet {
+  position: absolute;
+  top: 40%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 10px 2px currentColor;
+}
+.cometRequest {
+  background-color: var(--animation-request-color);
+  color: var(--animation-request-color);
+}
+.cometResponse {
+  background-color: var(--animation-response-color);
+  color: var(--animation-response-color);
+}
+.moveRight { animation: move-right 1.2s ease-in-out forwards; }
+.moveLeft { animation: move-left 1.2s ease-in-out forwards; }
+
+@keyframes move-right {
+  0%   { left: 25%; opacity: 0; transform: translateY(-50%) scale(0.5); }
+  25%  { opacity: 1; transform: translateY(-50%) scale(1); }
+  50%  { transform: translateY(-80px) scale(1.2); }
+  75%  { opacity: 1; transform: translateY(-50%) scale(1); }
+  100% { left: 75%; opacity: 0; transform: translateY(-50%) scale(0.5); }
+}
+
+@keyframes move-left {
+  0%   { left: 75%; opacity: 0; transform: translateY(-50%) scale(0.5); }
+  25%  { opacity: 1; transform: translateY(-50%) scale(1); }
+  50%  { transform: translateY(20px) scale(1.2); }
+  75%  { opacity: 1; transform: translateY(-50%) scale(1); }
+  100% { left: 25%; opacity: 0; transform: translateY(-50%) scale(0.5); }
+}

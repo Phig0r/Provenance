@@ -1,0 +1,151 @@
+/* Using Manrope font to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 10px;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+.tableSection { width: 100%; }
+
+.actionPanel { display: flex; flex-direction: column; border-radius: 8px; padding: 16px; }
+
+.actionPanel label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #292D2A;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.selectedProductsList {
+  flex-grow: 1; 
+  background-color: #F8F5F2;
+  border: 1px solid #EAE6E2;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start; /* Aligns items to the top */
+}
+
+.productTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #e5e7eb;
+  border: 1px solid #5e6774;
+  border-radius: 18px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5e6774;
+}
+
+.productTag button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.productTag svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 3;
+  color: #5e6774;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.selectAllButton, .receiveButton {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.selectAllButton {
+  background-color: #FFFFFF;
+  border: 1px solid #292D2A;
+  color: #292D2A;
+}
+.selectAllButton:hover {
+  background-color: #e2e8f0;
+  border-color: #a0aec0;
+}
+
+.receiveButton {
+  background-color: #FFFFFF;
+  border: 1px solid #292D2A;
+  color: #292D2A;
+}
+
+.receiveButton:hover {
+  background-color: #e2e8f0;
+  border-color: #a0aec0;
+}
+.selectAllButton:hover, .receiveButton:hover {
+  opacity: 0.9;
+}
+
+.receiveButton:disabled,
+.selectAllButton:disabled {
+  background-color: #F3F4F6;
+  color: #9CA3AF;
+  border-color: #E5E7EB;
+  cursor: not-allowed;
+}
+
+.receiveButton:disabled:hover,
+.selectAllButton:disabled:hover {
+  background-color: #F3F4F6;
+  border-color: #E5E7EB;
+  opacity: 1;
+}
+
+/* No Products Message */
+.noProductsMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  grid-column: 1 / -1;
+  height: 200px;
+}
+
+.noProductsIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.noProductsMessage h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #292D2A;
+  margin: 0 0 8px 0;
+}
+
+.noProductsMessage p {
+  font-size: 14px;
+  color: #6B706B;
+  margin: 0;
+  max-width: 300px;
+}
