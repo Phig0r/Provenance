@@ -6,7 +6,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import styles from './UpdateBrandStatus.module.css';
+import styles from './updateBrandStatus.module.css';
 
 import X from '../../assets/icons/x.svg?react';
 
