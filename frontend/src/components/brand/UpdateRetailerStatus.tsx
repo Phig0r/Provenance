@@ -5,7 +5,7 @@
  * with appropriate validation and visual feedback for current status.
  */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './UpdateRetailerStatus.module.css';
 
 import X from '../../assets/icons/x.svg?react';

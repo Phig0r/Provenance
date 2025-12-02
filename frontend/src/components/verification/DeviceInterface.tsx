@@ -6,7 +6,7 @@
  * process from initial input to final blockchain verification.
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './DeviceInterface.module.css';
 
 import CheckCircle from '../../assets/icons/check-circle.svg?react';

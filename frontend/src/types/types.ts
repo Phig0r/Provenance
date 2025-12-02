@@ -69,7 +69,7 @@ export interface HeaderProps {
   title: string;
   userRole: UserRole;
   onDisconnect?: () => void;
-  signer: Signer;
+  signer: Signer | null;
   showToast: (message: string, type: ToastType, detail?: string) => void;
   status?: BrandStatus | RetailerStatus;
 }

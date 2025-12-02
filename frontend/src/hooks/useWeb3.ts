@@ -67,7 +67,43 @@ export function useWalletConnect() {
          showToast('Connecting to wallet...', 'info', 'Opening MetaMask to request permission');
          const provider = new ethers.BrowserProvider((window as any).ethereum);
 
+         // Request account access
          await provider.send("eth_requestAccounts", []);
+         
+         // Check current network and switch to Sepolia if needed
+         const network = await provider.getNetwork();
+         const sepoliaChainId = BigInt(11155111); // Sepolia testnet chain ID
+         
+         if (network.chainId !== sepoliaChainId) {
+           showToast('Switching to Sepolia network...', 'info', 'Please approve the network switch');
+           try {
+             await (window as any).ethereum.request({
+               method: 'wallet_switchEthereumChain',
+               params: [{ chainId: `0x${sepoliaChainId.toString(16)}` }],
+             });
+           } catch (switchError: any) {
+             // This error code indicates that the chain has not been added to MetaMask
+             if (switchError.code === 4902) {
+               showToast('Adding Sepolia network...', 'info', 'Please approve adding Sepolia network');
+               await (window as any).ethereum.request({
+                 method: 'wallet_addEthereumChain',
+                 params: [{
+                   chainId: `0x${sepoliaChainId.toString(16)}`,
+                   chainName: 'Sepolia',
+                   nativeCurrency: {
+                     name: 'ETH',
+                     symbol: 'ETH',
+                     decimals: 18
+                   },
+                   rpcUrls: ['https://rpc.sepolia.org'],
+                   blockExplorerUrls: ['https://sepolia.etherscan.io']
+                 }],
+               });
+             } else {
+               throw switchError;
+             }
+           }
+         }
          
          const currentSigner = await provider.getSigner();
       const currentWallet = await currentSigner.getAddress();
