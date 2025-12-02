@@ -16,6 +16,7 @@ import ProductInteractionManager from '../components/shared/ProductInteractionMa
 import ShipmentManager from '../components/shared/ShipmentManager';
 import { useBrandOperations } from '../hooks/useWeb3';
 import { shortenAddress } from '../utils/formatter';
+import { BACKEND_URL } from '../utils/constants';
 import type { RetailerRow, ToastType, BrandStatus, RetailerStatus, ProductStatus } from '../types/types';
 
 import styles from './BrandPage.module.css';
@@ -116,7 +117,7 @@ export default function BrandPage({ onDisconnect, signer, showToast }: BrandPage
 
       setProductAuthenticator(publicKey);
 
-      const response = await fetch('http://localhost:3001/store-key', {
+      const response = await fetch(`${BACKEND_URL}/store-key`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

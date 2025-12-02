@@ -8,4 +8,6 @@ export const ACCESS_CONTROL_FACET_ADDRESS = "0x4162174a021DAFcf7C3C8b85817C05723
 export const PROVENANCE_ADDRESS = "0x81eEB7A87E91f490FbcbFfCbd70793886aE83a59";
 export const DEMO_ROLE_FAUCET_ADDRESS = "0x0442a21D30346d753664F5CB2fDee23C8D9689B5";
 
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://provenance-backend.onrender.com';
+
 export const wait = (milliseconds: number) => new Promise(resolve => setTimeout(resolve, milliseconds));

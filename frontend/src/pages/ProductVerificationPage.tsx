@@ -14,6 +14,7 @@ import Header from '../components/shared/Header';
 import DeviceInterface from '../components/verification/DeviceInterface';
 import PufSimulation from '../components/verification/PufSimulation';
 import { useConsumerOperations } from '../hooks/useWeb3';
+import { BACKEND_URL } from '../utils/constants';
 import type { ProductData, ToastType, VerificationStatus } from '../types/types';
 import styles from './ProductVerificationPage.module.css';
 
@@ -196,7 +197,7 @@ export default function ProductVerificationPage({
       const publicKey = productDetails.productAuthenticator;
       
       try {
-        const brandsResponse = await fetch('http://localhost:3001/brands');
+        const brandsResponse = await fetch(`${BACKEND_URL}/brands`);
         
         if (!brandsResponse.ok) {
           if (brandsResponse.status === 0 || !navigator.onLine) {
@@ -212,7 +213,7 @@ export default function ProductVerificationPage({
           brandName = brands[0];
         }
         
-        const response = await fetch(`http://localhost:3001/get-key/${encodeURIComponent(brandName)}/${publicKey}`);
+        const response = await fetch(`${BACKEND_URL}/get-key/${encodeURIComponent(brandName)}/${publicKey}`);
         
         if (!response.ok) {
           if (response.status === 0 || !navigator.onLine) {
